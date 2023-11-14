@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pontus Henriksson | Portfolio</title>
+    <meta name="description" content="This is my description" />
+    <link rel="stylesheet" href="./dist/css/main.css" />
+    <link
+      rel="shortcut icon"
+      href="media/images/profile.jpg"
+      type="image/x-icon"
+    />
+
+    <!-- Font awesome kit -->
+    <script
+      src="https://kit.fontawesome.com/7799275d96.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Font awesome kit -->
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-YY3V1P8T1V"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-YY3V1P8T1V');
+    </script>
+    <!-- Google tag (gtag.js) -->
+  </head>
+  <body>
+    <div class="Content">
+      <a href="#landing" class="returnToTop"
+        ><i class="fa-solid fa-arrow-up"></i
+      ></a>
+
+      <header>
+        <a id="nav_name" href="#landing">Pontus<br />Henriksson</a>
+        <nav>
+          <ul>
+            <a class="button" href="#contact">Contact</a>
+          </ul>
+        </nav>
+        <nav class="large_nav">
+          <ul>
+            <li><a href="index.html">Visit my portfolio</a></li>
+            <li><a href="showcase.html">Showcase</a></li>
+            <li><a class="button" href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main id="landing">
+        <div class="left_landing_content">
+          <h1>Project showcase!</h1>
+          <p>
+            Hello! I'm Pontus Henriksson, I will add more content regarding the
+            projects ive worked on here! This page is under cosntruction at the
+            moment so it's currently pretty empty :/
+          </p>
+          <a class="button" href="#contact">Contact</a>
+        </div>
+        <div class="right_landing_content">
+          <img src="./media/images/profile.jpg" alt="Hero image" />
+        </div>
+        <!-- Scroll down button -->
+        <a href="#about" class="scroll_down_button"
+          >Scroll down
+          <div class="scrollIndicator"></div
+        ></a>
+      </main>
+
+      <section id="contact">
+        <div class="contact_content">
+          <div class="contactHeader">
+            <h2>Contact me</h2>
+            <p>
+              Interested in working together or just want to say hi? Feel free
+              to drop me a message below. You can also find me on various social
+              media platforms or drop me an email directly.
+            </p>
+          </div>
+
+          <form id="contact-form" action="#">
+            <div class="form-group">
+              <label for="fname">First Name</label>
+              <input
+                type="text"
+                id="fname"
+                name="fname"
+                placeholder="Enter first name"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="lname">Last Name</label>
+              <input
+                type="text"
+                id="lname"
+                name="lname"
+                placeholder="Enter last name"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter email"
+                data-error="Valid email is required."
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message (required)</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Enter your message"
+                data-error="Please leave us a message, we would love to hear from you! A message is required."
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" class="button contactButton" id="submit-btn">
+              Send Message
+            </button>
+          </form>
+
+          <!-- Display email -->
+          <div class="displayEmail">
+            <span
+              >Don't want to use the form? No problem :) Feel free to email me
+              using the email adress below.</span
+            >
+
+            <a href="mailto:pontushenrikssn@gmail.com"
+              >pontushenrikssn@gmail.com</a
+            >
+          </div>
+          <div class="social-links">
+            <span>I also have social media, feel free to follow me there.</span>
+            <div class="socialLinkGroup">
+              <i class="fab fa-facebook socialIcons"></i>
+              <a
+                href="https://www.facebook.com/pontushenrikssn/"
+                target="_blank"
+                >Facebook</a
+              >
+            </div>
+            <div class="socialLinkGroup">
+              <i class="fab fa-instagram socialIcons"></i>
+              <a
+                href="https://www.instagram.com/pontushenrikssn"
+                target="_blank"
+                >Instagram</a
+              >
+            </div>
+            <div class="socialLinkGroup">
+              <i class="fab fa-github socialIcons"></i>
+              <a href="https://github.com/pontushenriksson" target="_blank"
+                >Github</a
+              >
+            </div>
+            <div class="socialLinkGroup">
+              <i class="fab fa-linkedin socialIcons"></i>
+              <a
+                href="https://www.linkedin.com/in/pontushenriksson/"
+                target="_blank"
+                >Linkedin</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        Thanks for visiting my portfolio!<br />&copy; 2023 Pontus Henriksson
+      </footer>
+    </div>
+
+    <!-- Email.js for contact form -->
+    <script
+      type="text/javascript"
+      src="https://cdn.emailjs.com/dist/email.min.js"
+    ></script>
+    <script>
+      // Initialize the mail.js library with your public key
+      emailjs.init('ztw-iqT4gMxDOqDho');
+
+      document
+        .getElementById('contact-form')
+        .addEventListener('submit', function (event) {
+          event.preventDefault();
+
+          const data = {
+            fname: event.target.fname.value,
+            lname: event.target.lname.value,
+            email: event.target.email.value,
+            message: event.target.message.value,
+          };
+
+          emailjs
+            .send('service_9v0z22o', 'template_9lp9hq4', data)
+            .then(response => {
+              alert(
+                'Message sent successfully, happy to hear from you! Hope you have a nice day :D'
+              );
+              event.target.reset();
+            })
+            .catch(error => {
+              alert('Failed to send the message. Please try again.');
+            });
+        });
+    </script>
+    <!-- Email.js for contact form -->
+
+    <script src="script.js"></script>
+  </body>
+</html>
